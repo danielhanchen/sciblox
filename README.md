@@ -21,6 +21,14 @@ Features in construction:
 3. Advanced text extraction methods
 4. Automatic Machine Learning methods
 
+***TO INSTALL***:
+If you are using ANACONDA Python, place sciblox.py in C:\ProgramData\Anaconda3\Lib.
+Then, for easier calling:
+```python
+from sciblox import *
+%matplotlib inline
+```
+
 Some screenshots:
 
 ![Plotting](/Plot.jpg?raw=true "Auto Plotting")
