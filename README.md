@@ -23,3 +23,4 @@ Features in construction:
 
 Some screenshots:
 
+![Plotting](/Plot.jpg?raw=true "Auto Plotting")
