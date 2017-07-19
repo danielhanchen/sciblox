@@ -24,3 +24,9 @@ Features in construction:
 Some screenshots:
 
 ![Plotting](/Plot.jpg?raw=true "Auto Plotting")
+
+![Imputing](/impute.jpg?raw=true "MICE,BPCA Missing Data Imputation")
+
+![Analysing](/Analyse.jpg?raw=true "Clear descriptive statistics")
+
+![Data_Mining](/datamining.jpg?raw=true "Sequential Data Mining")
