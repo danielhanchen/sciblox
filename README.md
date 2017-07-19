@@ -28,6 +28,17 @@ Then, for easier calling:
 from sciblox import *
 %matplotlib inline
 ```
+If you are using other methods, just copy paste sciblox.py into whatever Python3 main directory.
+Then call it same as top.
+
+***PREREQS***:
+1. Numpy
+2. Pandas
+3. Matplotlib
+4. Seaborn
+5. Sklearn
+6. (If you use KNN or SVD imputation) - FancyImpute AND Theano
+7. Scipy
 
 Some screenshots:
 
