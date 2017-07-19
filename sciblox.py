@@ -10,6 +10,7 @@
 import numpy as np
 import pandas as pd
 import scipy as sci
+import scipy
 import seaborn as sb
 import matplotlib.pyplot as plt
 
@@ -288,7 +289,7 @@ def random(x, size = 5, n = 5, order = False, ordered = False):
 def columns(x):
     if type(x) in [pd.Series, pd.DataFrame]: 
         try:  return x.columns.tolist()
-        except:  print("No columns")
+        except:  pass;
     else: print("Not DataFrame")
         
 def cols(x): return columns(x)
@@ -307,7 +308,7 @@ def strs(x):
     
 def cats(x):
     if type(x) == pd.DataFrame: 
-        objects = strs(x);        ctd = nunqiue(x[conts(x)]);         parts = ((ctd<6)|((ctd<len(x)*0.01)&(ctd<15)&(dtype(x[conts(x)])=='int')))
+        objects = strs(x);        ctd = nunqiue(x[conts(x)]);         parts = ((ctd<6)|((ctd<len(x)*0.01)&(ctd<15)&(dtypes(x[conts(x)])=='int')))
         categories = parts.index[parts].tolist()                  
         for cat in categories: objects.append(cat)
         return objects
@@ -369,8 +370,7 @@ def dtypes(x, *args):
         elif x.dtype == 'bool': return 'bool'
         else: return "str"
     else: return type(x)
-        
-def dtype(x, *args): return dtypes(x, args)      
+            
 #-------------
 def missing(x): return (x.count()!=len(x)).index[x.count()!=len(x)].tolist()
 def nacols(x): return (x.count()!=len(x)).index[x.count()!=len(x)].tolist()
@@ -392,7 +392,7 @@ def zerocount(x): return sum(x==0)
 #-------------------- Cleaning some data and popping/joining columns / getting specific columns --------------------#
 def clean(x, *args):
     def cleancol(x):
-        if dtype(x) == 'obj': 
+        if dtypes(x) == 'obj': 
             c = x.str.replace(",","").str.replace(" ","").str.replace("-","").str.replace("%","").str.replace("#","")
         else: c = x
             
@@ -431,7 +431,7 @@ def pop(x, *args):
         return x
     else: 
         if type(obj[0]) == str: 
-            if dtype(x)!= 'str': x = string(x)
+            if dtypes(x)!= 'str': x = string(x)
                 
 def rem(x, *args): return pop(x, args)
 def remove(x, *args): return pop(x, args)
@@ -459,7 +459,7 @@ def append(left, right):
 #-------------
 def reverse(x):
     if type(x) in [pd.DataFrame,pd.Series]: 
-        if dtype(x) == 'bool': return x == False
+        if dtypes(x) == 'bool': return x == False
         else: return x.iloc[::-1]
     elif type(x) == list: return x[::-1]
     elif type(x) == dict: return {i[1]:i[0] for i in x.items()}
@@ -634,7 +634,7 @@ def CI(q, data, method = "mean",U = True, L = True):
 #-------------------- Basic Analysis --------------------#
 def describe(x, strings = True, continuous = True, axis = 0, colour = True):
     if type(x) == pd.Series:
-        if dtype(x) == 'str':
+        if dtypes(x) == 'str':
             things = table(vcat(mode(x), nunique(x), punique(x), freqratio(x)))
             things.index = ["Mode","No.Unique","%Unique","FreqRatio"]
             return things[0]
@@ -746,23 +746,21 @@ def varcheck(x, **args):
 #-------------    
 def corr(x, table = False):
     if table == False:
-        try:
-            x = (x[conts(x)])[0]; corrs = x.corr()
-            cmap =sb.diverging_palette(100, 200, as_cmap=True)
-            def magnify():
-                return [dict(selector="th",
-                             props=[("font-size", "11pt")]),
-                        dict(selector="td",
-                             props=[('padding', "0em 0em")]),
-                        dict(selector="th:hover",
-                             props=[("font-size", "16pt")]),
-                        dict(selector="tr:hover td:hover",
-                             props=[('max-width', '200px'),
-                                    ('font-size', '16pt')])
-            ]
-            show = corrs.style.background_gradient(cmap, axis=1).set_properties(**{'max-width': '100px', 'font-size': '11pt'}).set_precision(2).set_table_styles(magnify())
-            return show
-        except: print("Error. No continuous data")
+        corrs = x.corr()
+        cmap =sb.diverging_palette(100, 200, as_cmap=True)
+        def magnify():
+            return [dict(selector="th",
+                         props=[("font-size", "11pt")]),
+                    dict(selector="td",
+                         props=[('padding', "0em 0em")]),
+                    dict(selector="th:hover",
+                         props=[("font-size", "16pt")]),
+                    dict(selector="tr:hover td:hover",
+                         props=[('max-width', '200px'),
+                                ('font-size', '16pt')])
+        ]
+        show = corrs.style.background_gradient(cmap, axis=1).set_properties(**{'max-width': '100px', 'font-size': '11pt'}).set_precision(2).set_table_styles(magnify())
+        return show
     else:
         try: return x[conts(x)].corr()
         except: print("Error. No continuous data")
@@ -784,8 +782,8 @@ def remcor(x, threshold = 0.9):
     return dataset
 #-------------
 #https://stackoverflow.com/questions/42867494/how-can-i-find-a-basis-for-the-column-space-of-a-rectangular-matrix/42868363#42868363
-def linindp(x):
-    from sci.linalg import lu
+def linindp(A):
+    from scipy.linalg import lu
     U = lu(A)[2]
     col = [np.flatnonzero(U[i, :])[0] for i in range(U.shape[0])]
     good = T(A)[0]
@@ -1053,8 +1051,8 @@ def false_bad(s):
 
 #-------------------- Graphical Modules --------------------#
 def check_type(x):
-    ctd = nunqiue(x);         parts = (((ctd<=15)&(len(x)>15))|((ctd<len(x)*0.01)&(ctd<=20)&(dtype(x)=='int'))|((dtype(x)=='str')&(ctd<=15)))
-    if dtype(x) != 'str':
+    ctd = nunqiue(x);         parts = (((ctd<=15)&(len(x)>15))|((ctd<len(x)*0.01)&(ctd<=20)&(dtypes(x)=='int'))|((dtypes(x)=='str')&(ctd<=15)))
+    if dtypes(x) != 'str':
         if parts == True: return 'cat'
         else: return 'cont'
     else: 
@@ -1200,13 +1198,11 @@ def plot(x = None, y = None, factor = None, data = None, n = 3, size = 8, smooth
             if check_type(data[ylabel]) == 'cont':
                 fig = plt.figure(figsize=(size,size))
                 fig = sb.lmplot(x = xlabel, y = ylabel, hue = flabel, data = data,robust = True, n_boot = 50, scatter = False, ci = None)
-                plt.setp(fig.get_xticklabels(), rotation=45)
                 plt.show()
 
             elif check_type(data[ylabel]) == 'cat':
                 fig = sb.factorplot(x = xlabel, y = ylabel, col = flabel, data = data, palette = "Set3", dodge=True, ci = 70, 
                                     estimator = special_statistic, capsize=.2, n_boot = 100, size = 5)
-                plt.setp(fig.get_xticklabels(), rotation=45)
                 plt.show()
 
 #-------------            
