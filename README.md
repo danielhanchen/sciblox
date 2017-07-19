@@ -39,6 +39,7 @@ Then call it same as top.
 5. Sklearn
 6. (If you use KNN or SVD imputation) - FancyImpute AND Theano
 7. Scipy
+8. XGBoost
 
 Some screenshots:
 
