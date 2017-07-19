@@ -2,7 +2,7 @@
 An all in one Python3 Data Science Package. Easy visualisation, data mining, data preparation and machine learning.
 
 Please check the Jupyter Notebook for instructions on how to use it.
-Open the HTML file if you want to see extra styling.
+You can aslo check sciblox out on https://danielhanchen.github.io/
 
 Some features explained include:
 
