@@ -6,7 +6,7 @@ Open the HTML file if you want to see extra styling.
 
 Some features explained include:
 
-1. MICE, BPCA imputation with Random Forests, XGBoost and Linear Regression
+1. MICE, BPCA missing data imputation with Random Forests, XGBoost and Linear Regression support
 2. Automatic Data Plotting
 3. Word extraction and frequency plots
 4. Sequential text processing
