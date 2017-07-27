@@ -37,7 +37,7 @@ Then call it same as top.
 
 Some screenshots:
 
-![Analysing](/Analyse.jpg?raw=true "Auto analysing")
+![Analysing](/Analyse.jpg?raw=true "Auto analysing and 3d plots")
 
 ![Preprocessing](/Preprocess.jpg?raw=true "CARET like Preprocess")
 
