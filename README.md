@@ -2,7 +2,12 @@
 An all in one Python3 Data Science Package. Easy visualisation, data mining, data preparation and machine learning.
 
 Please check the Jupyter Notebook for instructions on how to use it.
-You can aslo check sciblox out on https://danielhanchen.github.io/
+You can also check sciblox out on https://danielhanchen.github.io/
+
+WHAT'S NEW?
+1. FASTER (x10) BPCA fill
+2. Better analyser
+3. NEW modules - Machine Learning
 
 Some features explained include:
 
@@ -13,40 +18,29 @@ Some features explained include:
 5. CARET like processes including ZeroVarCheck, FreqRatios etc.
 6. Discretization and Continuisation
 7. Easy data structure changes like Hcat, Vcat, reversing etc.
+8. Easy CARET like Machine Learning modules
+9. Automatic Best Graphs Plotting
 
-Features in construction:
-
-1. Easy CARET like Machine Learning modules
-2. Automatic Best Graphs Plotting
-3. Advanced text extraction methods
-4. Automatic Machine Learning methods
+IN CONSTRUCTION:
+1. Advanced text extraction methods
+2. Automatic Machine Learning methods
 
 ***TO INSTALL***:
 If you are using ANACONDA Python, place sciblox.py in C:\ProgramData\Anaconda3\Lib.
 Then, for easier calling:
 ```python
 from sciblox import *
-%matplotlib inline
+%matplotlib notebook
 ```
 If you are using other methods, just copy paste sciblox.py into whatever Python3 main directory.
 Then call it same as top.
 
-***PREREQS***:
-1. Numpy
-2. Pandas
-3. Matplotlib
-4. Seaborn
-5. Sklearn
-6. (If you use KNN or SVD imputation) - FancyImpute AND Theano
-7. Scipy
-8. XGBoost
-
 Some screenshots:
 
-![Plotting](/Plot.jpg?raw=true "Auto Plotting")
+![Analysing](/Analyse.jpg?raw=true "Auto analysing")
 
-![Imputing](/impute.jpg?raw=true "MICE,BPCA Missing Data Imputation")
+![Preprocessing](/Preprocess.jpg?raw=true "CARET like Preprocess")
 
-![Analysing](/Analyse.jpg?raw=true "Clear descriptive statistics")
+![Analytics](/Analytics.jpg?raw=true "CARET like checking")
 
-![Data_Mining](/datamining.jpg?raw=true "Sequential Data Mining")
+![Plotting](/Plot.jpg?raw=true "Cool easy plots")
