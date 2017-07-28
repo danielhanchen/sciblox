@@ -10,6 +10,13 @@ Install:
 ```sh
 [sudo] pip install sciblox
 ```
+NOTE: If you intend to use remove linearly dependent rows or KNN,SVD impute:
+```sh
+[sudo] pip install fancyimpute sympy theano
+```
+If fancyimpute fails: Please install C++ or MingW compiler
+
+
 WHAT'S NEW?
 1. FASTER (x10) BPCA fill
 2. Better analyser
