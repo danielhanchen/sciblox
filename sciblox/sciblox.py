@@ -846,7 +846,7 @@ def remcorr(x,limit=0.9): return remcor(x,limit)
 def independent(A):
     try: import sympy
     except: 
-        print("Cannot install"); raise
+        print("Please install SYMPY: pip install sympy"); raise
     _, inds = sympy.Matrix(A).T.rref()
     print("Lin Indp rows are: "+str(inds))
     return A[list(inds)]
@@ -1062,7 +1062,7 @@ def complete(df, method = None, objects = None, continuous = None, knn = 5, max_
         imped = 1
         try: import fancyimpute
         except: 
-            print("Cannot import"); raise
+            print("Please install fancyimpute for KNN,SVD. MICE,Forest,BPCA is allowed without it.\nPip install fancyimpute\nIf there are errors, please use Anaconda or install C++ build tools or MingW C++\nSorry"); raise
             
         def matching(method, objects, continuous, thingo):
             if method is not None:

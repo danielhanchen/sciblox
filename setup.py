@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='sciblox',
-    version='0.2.3',
+    version='0.2.4',
     author='Daniel Han-Chen',
     author_email='danielhanchen@gmail.com',
     packages=['sciblox'],
@@ -17,11 +17,13 @@ setup(
         "matplotlib >= 2.0.0",
         "seaborn >= 0.8.0",
         "lightgbm >= 2.0.0",
-        "sympy >= 1.1.0",
-        "fancyimpute >= 0.2.0",
-        "jupyterthemes >= 0.16.0",
         "jupyter >= 0.9.0",
-        "numpy >= 1.12.1",
-        "theano >= 0.8.0",
+        "numpy >= 1.12.1"
     ],
+    extras_require = {
+        'theano':  ["theano >= 0.8.0"],
+        'fancyimpute': ["fancyimpute >= 0.2.0"],
+        'sympy': ["sympy >= 1.1.0"],
+        'jupyterthemes': ["jupyterthemes >= 0.16.0"]
+    }
 )
