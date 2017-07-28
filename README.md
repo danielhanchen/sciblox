@@ -4,6 +4,12 @@ An all in one Python3 Data Science Package. Easy visualisation, data mining, dat
 Please check the Jupyter Notebook for instructions on how to use it.
 You can also check sciblox out on https://danielhanchen.github.io/
 
+https://pypi.python.org/pypi/sciblox
+
+Install:
+```sh
+[sudo] pip install sciblox
+```
 WHAT'S NEW?
 1. FASTER (x10) BPCA fill
 2. Better analyser
@@ -25,9 +31,7 @@ IN CONSTRUCTION:
 1. Advanced text extraction methods
 2. Automatic Machine Learning methods
 
-***TO INSTALL***:
-If you are using ANACONDA Python, place sciblox.py in C:\ProgramData\Anaconda3\Lib.
-Then, for easier calling:
+For easier calling:
 ```python
 from sciblox import *
 %matplotlib notebook
@@ -37,10 +41,10 @@ Then call it same as top.
 
 Some screenshots:
 
-![Analysing](/Analyse.jpg?raw=true "Auto analysing and 3d plots")
+![Analysing](/img/Analyse.jpg?raw=true "Auto analysing and 3d plots")
 
-![Preprocessing](/Preprocess.jpg?raw=true "CARET like Preprocess")
+![Preprocessing](/img/Preprocess.jpg?raw=true "CARET like Preprocess")
 
-![Analytics](/Analytics.jpg?raw=true "CARET like checking")
+![Analytics](/img/Analytics.jpg?raw=true "CARET like checking")
 
-![Plotting](/Plot.jpg?raw=true "Cool easy plots")
+![Plotting](/img/Plot.jpg?raw=true "Cool easy plots")
