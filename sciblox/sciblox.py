@@ -1,6 +1,6 @@
 #------------- Daniel Han-Chen 2017
 #------------- https://github.com/danielhanchen/sciblox
-#------------- SciBlox v0.2.1
+#------------- SciBlox v0.2.8
 #-------------
 
 maxcats = 15
@@ -557,15 +557,15 @@ def cos(df, *args):
         try: return np.cos(df)
         except: return df
 #-------------        
-def cos(df, *args):
+def tan(df, *args):
     if type(df) == pd.DataFrame:
         x, col = argcheck(df, args)
         for y in col:
-            try: x[y] = np.cos(x[y])
+            try: x[y] = np.tan(x[y])
             except: pass;
         return x
     else: 
-        try: return np.cos(df)
+        try: return np.tan(df)
         except: return df
 #-------------        
 def sqrt(df, *args):
@@ -1808,5 +1808,5 @@ def getwords(y, first = 10):
 
 #------------- Daniel Han-Chen 2017
 #------------- https://github.com/danielhanchen/sciblox
-#------------- SciBlox v0.2.1
+#------------- SciBlox v0.2.8
 #-------------
