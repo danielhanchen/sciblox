@@ -1,6 +1,6 @@
 #------------- Daniel Han-Chen 2017
 #------------- https://github.com/danielhanchen/sciblox
-#------------- SciBlox v0.02
+#------------- SciBlox v0.2.1
 #-------------
 
 maxcats = 15
@@ -8,31 +8,8 @@ import warnings
 warnings.filterwarnings("ignore")
 true = True; TRUE = True
 false = False; FALSE = False
-import pip
-def install(package): pip.main(['install', package])
 
 #-----------------------------
-try: 
-    import pandas as pd, numpy as np, scipy, sklearn as sk, seaborn as sb
-    from copy import copy
-    from jupyterthemes import jtplot
-    import matplotlib.pyplot as plt
-    jtplot.style()
-except:
-    try: 
-        print("Installing packages... Please wait...")
-        if __name__ == '__main__': 
-            install('pandas'); install('numpy'); install('scipy'); install('scikit-learn'); 
-            install('matplotlib'); install('seaborn'); install('lightgbm');
-        try: install('jupyterthemes'); 
-        except: pass;
-        try: install('sympy'); 
-        except: pass;
-        try: 
-            install('libpython'); install('theano'); install('fancyimpute'); 
-        except: pass;
-    except: pass;
-
 import pandas as pd, numpy as np, scipy, sklearn as sk, seaborn as sb
 from copy import copy
 import matplotlib.pyplot as plt
@@ -1831,5 +1808,5 @@ def getwords(y, first = 10):
 
 #------------- Daniel Han-Chen 2017
 #------------- https://github.com/danielhanchen/sciblox
-#------------- SciBlox v0.02
+#------------- SciBlox v0.2.1
 #-------------

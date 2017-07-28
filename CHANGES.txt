@@ -1,0 +1,17 @@
+WHAT'S NEW?
+
+1. FASTER (x10) BPCA fill
+
+2. Better analyser
+
+3. NEW modules - Machine Learning
+
+4. Fixed some silly errors in HCAT and VCAT methods
+
+5. Better and more flexible functions!
+
+6. Removed some redundant things
+
+7. AUTO installs necessary packages!
+
+8. Changed some setup py errors
